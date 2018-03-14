@@ -8,7 +8,7 @@ export default function GuessSection(props) {
   return (
     <section aria-label="Guess section" aria-describedby="feedback">
       <Feedback />
-      <GuessForm />
+      <GuessForm makeGuess={(guess) => props.makeGuess(guess)}/>
     </section>
   );
 }
