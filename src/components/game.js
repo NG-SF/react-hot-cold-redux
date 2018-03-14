@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
-import {setGuess} from '../actions/index';
+import {setGuess, setAuralStatus} from '../actions/index';
 
 class Game extends React.Component {    
 
@@ -28,6 +28,7 @@ makeGuess = (guess) => {
     } else {
       feedback = 'You got it!';
     }
+    this.props.dispatch(setAuralStatus());
   return this.props.dispatch(setGuess(guess, feedback));
 }
     render() {
