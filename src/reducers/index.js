@@ -10,28 +10,10 @@ const initialState = {
 export const hotColdReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_GUESS:
-    let feedback, guess;
-    guess = parseInt(action.guess, 10);
-    if (isNaN(guess)) {
-     feedback = 'Please enter a valid number';
-      return Object.assign({}, state, {feedback, guesses: [...state.guesses, guess]});
-    }
-    const difference = Math.abs(guess - state.correctAnswer);
-
-    if (difference >= 50) {
-      feedback = 'You\'re Ice Cold...';
-    } else if (difference >= 30) {
-      feedback = 'You\'re Cold...';
-    } else if (difference >= 10) {
-      feedback = 'You\'re Warm.';
-    } else if (difference >= 1) {
-      feedback = 'You\'re Hot!';
-    } else {
-      feedback = 'You got it!';
-    }
+    
     return Object.assign({}, state, {
-            guesses:[...state.guesses, guess],
-            feedback
+            guesses:[...state.guesses, action.guess],
+            feedback: action.feedback
       });
     
     case SET_AURAL_STATUS:
