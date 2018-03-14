@@ -5,6 +5,7 @@ import GuessSection from './guess-section';
 import StatusSection from './status-section';
 import InfoSection from './info-section';
 import {setGuess} from '../actions/index';
+
 class Game extends React.Component {    
 
 makeGuess = (guess) => {
