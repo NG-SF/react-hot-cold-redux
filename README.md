@@ -1,4 +1,4 @@
-# React hot or cold solution
+# React hot-cold game refactored to use Redux for state management
 
-[GitHub](https://github.com/Thinkful-Ed/react-hot-cold)
+
 
